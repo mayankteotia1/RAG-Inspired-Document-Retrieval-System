@@ -5,20 +5,7 @@ using namespace std;
 
 // ---------------------------------------------------------------
 // RateLimiter
-//
 // Implements the Token Bucket algorithm, per user.
-//
-// Idea:
-//   - Every user has a "bucket" that can hold up to `capacity` tokens.
-//   - Tokens refill over time at a fixed rate (`refillRate` tokens/sec).
-//   - Every request costs 1 token.
-//   - If the bucket has at least 1 token -> request allowed, consume a token.
-//   - If the bucket is empty -> request rejected (rate limited).
-//
-// Why Token Bucket?
-//   - Allows short bursts of traffic (up to `capacity` requests at once)
-//   - But smooths out traffic over time, since tokens regenerate slowly.
-//   - Easy to reason about and implement using just a timestamp + a counter.
 // ---------------------------------------------------------------
 
 class RateLimiter
@@ -81,3 +68,14 @@ private:
         bucket.lastRefillTime = now;
     }
 };
+// Idea:
+//   - Every user has a "bucket" that can hold up to `capacity` tokens.
+//   - Tokens refill over time at a fixed rate (`refillRate` tokens/sec).
+//   - Every request costs 1 token.
+//   - If the bucket has at least 1 token -> request allowed, consume a token.
+//   - If the bucket is empty -> request rejected (rate limited).
+//
+// Why Token Bucket?
+//   - Allows short bursts of traffic (up to `capacity` requests at once)
+//   - But smooths out traffic over time, since tokens regenerate slowly.
+//   - Easy to reason about and implement using just a timestamp + a counter.
