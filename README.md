@@ -1,6 +1,6 @@
 # Smart Document Search Engine
 
-A C++17 backend project simulating the retrieval step of a RAG (Retrieval-Augmented Generation) pipeline. A user query passes through rate limiting, an LRU cache, and a keyword-based search engine over a local knowledge base.
+A C++17 backend project simulating the retrieval step of a RAG (Retrieval-Augmented Generation) pipeline. A user query passes through rate limiting, an LRU cache, and a inverted index search engine over a local knowledge base.
 
 ## Structure
 
@@ -59,4 +59,3 @@ RateLimiter rateLimiter(Algorithm::FIXED_WINDOW, 3, 5.0);
 
 * TF-IDF based scoring
 * Multi-user support with thread safety (mutex)
-* Inverted index for faster search
