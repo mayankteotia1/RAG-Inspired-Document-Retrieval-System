@@ -1,6 +1,6 @@
 # Smart Document Search Engine
 
-A C++17 backend project simulating the retrieval step of a RAG (Retrieval-Augmented Generation) pipeline. A user query passes through rate limiting, an LRU cache, and a inverted index search engine over a local knowledge base.
+A C++ backend project simulating the retrieval step of a RAG (Retrieval-Augmented Generation) pipeline. A user query passes through rate limiting, an LRU cache, and a inverted index search engine over a local knowledge base.
 
 ## Structure
 
